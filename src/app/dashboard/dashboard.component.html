@@ -1,0 +1,103 @@
+<nav class="navbar">
+  <span class="username">
+    <img src="../../assets/images/chennai-petroleum-corporation-cpcl-seeklogo.png" class="img-style" alt="logo" />
+    Hi, {{user.username | sentenceCase}}</span>
+  <mat-tab-group [(selectedIndex)]="selectedTabIndex" class="navbar-tabs"
+    *ngIf="user.role === 'SP' || user.role === 'AD'">
+    <mat-tab label="Home"></mat-tab>
+    <mat-tab label="Machine Audits"></mat-tab>
+    <mat-tab label="Audit History"></mat-tab>
+    <mat-tab label="Machines"></mat-tab>
+    <mat-tab label="Users" *ngIf="user.role==='AD'"></mat-tab>
+  </mat-tab-group>
+  <div class="btns">
+    <button class="bell-icon" #bell (click)="togglePopup()">
+      🔔 <span>
+        <h3>{{ currentVal }}</h3>
+      </span>
+    </button>
+    <button class="logout-btn" (click)='onClickLogout()'>Logout</button>
+  </div>
+</nav>
+
+<div class="content">
+
+  <ng-container *ngIf="user.role === 'AD' || user.role ==='SP'">
+    <ng-container [ngSwitch]="selectedTabIndex">
+      <ng-container *ngSwitchCase="0">
+        <app-dashboard-card></app-dashboard-card>
+      </ng-container>
+      <ng-container *ngSwitchCase="1">
+        <!-- Panel Content -->
+
+        <div *ngIf="user.role === 'SP' || user.role === 'AD'">
+          <p>{{this.data?.duelist?.length === 0? 'Due List': ''}}</p>
+          <app-dynamic-table [databaseList]="this.data?.dueList" title="Pending List" [removeKeys]="tableConfig.removeKeys"
+            [dateKeys]="tableConfig.dateKeys" [orderKeys]="tableConfig.orderKeys" [actionKeys]="tableConfig.actionKeys"
+            [renameHeaderKeys]="tableConfig.renameHeaderKeys" [actionButtonType]="tableConfig.actionButtonType"
+            (openModal)="openAuditDialog($event)"></app-dynamic-table>
+
+          <app-dynamic-table [databaseList]="this.data?.auditList" title=" Audit List"
+            [removeKeys]="tableConfig.removeKeys" [dateKeys]="tableConfig.dateKeys" [orderKeys]="tableConfig.orderKeys"
+            [actionKeys]="tableConfig.actionKeys" [renameHeaderKeys]="tableConfig.renameHeaderKeys"
+            [actionButtonType]="tableConfig.actionButtonType" (openModal)="openAuditDialog($event)"></app-dynamic-table>
+
+        </div>
+
+      </ng-container>
+      <ng-container *ngSwitchCase="2">
+        <!-- History Content -->
+        <app-dynamic-table [databaseList]="this.analysisdata?.Transformer" title="Transformer Audit History"
+          [removeKeys]="actableConifg.removeKeys" [dateKeys]="actableConifg.dateKeys"
+          [orderKeys]="actableConifg.orderKeys" [actionKeys]="actableConifg.actionKeys"
+          [renameHeaderKeys]="actableConifg.renameHeaderKeys" [actionButtonType]="actableConifg.actionButtonType"
+          (openModal)="openDetailForm($event)"></app-dynamic-table>
+
+        <app-dynamic-table [databaseList]="this.analysisdata?.Compressor" title="Compressor Audit History"
+          [removeKeys]="actableConifg.removeKeys" [dateKeys]="actableConifg.dateKeys"
+          [orderKeys]="actableConifg.orderKeys" [actionKeys]="actableConifg.actionKeys"
+          [renameHeaderKeys]="actableConifg.renameHeaderKeys" [actionButtonType]="actableConifg.actionButtonType"
+          (openModal)="openDetailForm($event)"></app-dynamic-table>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="3">
+        <div *ngIf="user.role === 'AD'" class="padding">
+          <h2>Machines</h2>
+          <div class="admin-panel">
+            <button class="button-styling machine-btn" (click)="openCreateMachine()"> Create New Machine</button>
+          </div>
+        </div>
+        <app-dynamic-table [databaseList]="this.data?.allList" title="Machines  List" [removeKeys]="actableConifg.removeKeys"
+          [dateKeys]="actableConifg.dateKeys" [orderKeys]="actableConifg.orderKeys" [actionKeys]="actableConifg.actionKeys"
+          [renameHeaderKeys]="actableConifg.renameHeaderKeys" [actionButtonType]="actableConifg.actionButtonType"
+          (openModal)="openAuditDialog($event)"></app-dynamic-table>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="4">
+        <div *ngIf="user.role === 'AD'" class="padding">
+          <h2>Users</h2>
+          <div class="admin-panel">
+            <button class="button-styling user-btn" (click)="openCreateUser()"> Create New User</button>
+          </div>
+        </div>
+        <app-dynamic-table [databaseList]="this.usersList" title="Users  List" [removeKeys]="userConfig.removeKeys"
+          [dateKeys]="userConfig.dateKeys" [orderKeys]="userConfig.orderKeys" [actionKeys]="userConfig.actionKeys"
+          [renameHeaderKeys]="userConfig.renameHeaderKeys" [actionButtonType]="userConfig.actionButtonType"
+          (openModal)="openDynamicForm($event)"></app-dynamic-table>
+      </ng-container>
+
+
+
+    </ng-container>
+  </ng-container>
+
+
+  <ng-container *ngIf="user.role !== 'SP' && user.role !== 'AD'" >
+    <p>{{this.data?.duelist?.length === 0? 'Due List': ''}}</p>
+    <app-dynamic-table  [databaseList]="this.data?.dueList" title="Dues List" [removeKeys]="actableConifg.removeKeys"
+      [dateKeys]="actableConifg.dateKeys" [orderKeys]="actableConifg.orderKeys" [actionKeys]="actableConifg.actionKeys"
+      [renameHeaderKeys]="actableConifg.renameHeaderKeys" [actionButtonType]="actableConifg.actionButtonType"
+      (openModal)="openDynamicForm($event)"></app-dynamic-table>
+  </ng-container>
+
+</div>

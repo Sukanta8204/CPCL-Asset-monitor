@@ -1,0 +1,17 @@
+<h2 style="text-align: center;">Notifications</h2>
+<div class="notification-panel">
+  <div
+    *ngFor="let item of notifications; let index = index"
+    (click) = 'onClickNotificationItem(item)'
+    class="notification-item"
+    [ngStyle]="{ 'border-bottom': index !== notifications.length - 1 ? '1px solid #eee' : 'none' }"
+  >
+    <div class="unread-indicator" *ngIf="!item.is_read">*</div>
+    <div class="notification-message">
+      <p>{{ item?.message }}</p>
+    </div>
+    <div class='close-btn' (click)="onClickClose(item)">X</div>
+  </div>
+
+</div>
+<button class="close-all-btn" (click)="onClickCloseAll()">Close all</button>

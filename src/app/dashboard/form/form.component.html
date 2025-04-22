@@ -1,0 +1,8 @@
+<div class="container">
+  <h2>Machine Audit Form</h2>
+  <app-dynamic-form
+    [formConfig]="formConfig"
+    [formType]="currentFormType"
+    (formAction)="handleFormAction($event)">
+  </app-dynamic-form>
+</div>

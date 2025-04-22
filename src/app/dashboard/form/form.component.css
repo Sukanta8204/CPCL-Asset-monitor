@@ -1,0 +1,36 @@
+.container {
+  max-width: 400px;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.form-type-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-type-selector button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form-type-selector button.active {
+  background-color: #F57C00;
+  color: white;
+  border-color: #F57C00;
+}
+
+.form-type-selector button:hover:not(.active) {
+  background-color: #eee;
+}

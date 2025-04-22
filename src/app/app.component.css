@@ -1,0 +1,12 @@
+.button-to-div{
+  all: unset;
+  background: transparent;
+  outline: none;
+}
+
+.custom-fare-dialog .mat-dialog-container {
+  padding: 0px !important;
+  border-radius: 8px;
+  background-color: #F8F8F8;
+  overflow: scroll;
+ }

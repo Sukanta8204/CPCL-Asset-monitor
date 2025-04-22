@@ -1,0 +1,48 @@
+<div class="main-container">
+
+
+  <!-- TABLE -->
+  <div class="table-content">
+      <div class="table-wrapper" *ngIf="databaseList && databaseList.length">
+          <table class="table-grid">
+            <div *ngIf="title!=='NO TITLE'" style="height: 67px;"></div>
+            <div *ngIf="title!=='NO TITLE'" class="total-count">{{title}}</div>
+            <tr class="table-row table-head">
+              <th class="table-header" *ngFor="let key of tableHeadingKeys">
+                <ng-container *ngIf="key == 'Menu'">{{'Action' | sentenceCase}}</ng-container>
+                <ng-container *ngIf="key != 'Select All Boxes' && key!='Menu'" class="heading">{{key | sentenceCase}}</ng-container>
+              </th>
+            </tr>
+            <tr *ngFor="let item of databaseList ,let i = index">
+              <td *ngFor="let key of tableKeys" class="table-body-data" [class]="{'tbr-status': item.audit_status === 'TBR','bad-health-status':item.health_status <= 2}">
+                <ng-container [ngSwitch]="true">
+                  <ng-container *ngSwitchCase="allActionKeys.includes(key)">
+                    <!-- Edit -->
+                    <button class="btn-align-flex edit-btn button-to-div" *ngIf = "actionButtonType=='actions'" (click)="navigate(item, getActionKey(key))" aria-label="action-icon">
+                      <img class="icon-size-20" src="../../../../assets/images/{{getActionKey(key)?.imgPath}}" alt="action-icon">
+                    </button>
+                    <!-- menu -->
+                    <button class="action-btn flex-action-btn button-to-div" *ngIf="actionButtonType=='menu'"aria-label="menu">
+                      <div class="btn-align-flex" *ngIf="actionButtonType=='menu'" #menuButton>
+                        <img src="../../assets/images/{{getActionKey(key)?.imgPath}}" alt="menu-icon">
+                      </div>
+                    </button>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="key === 'status' && isString(item[key])">
+                    <div [ngClass]="getStatusClass(item[key])">
+                      {{ item[key] ? (item[key] | sentenceCase) : '-' }}
+                    </div>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="dateKeys.includes(key)">{{ item[key]? (item[key] | date: "MMM d y, hh:mm a"): '-' }}</ng-container>
+                 <ng-container *ngSwitchDefault><div [title]="item[key]">{{ item[key] | commonTitlecase }}</div></ng-container>
+                </ng-container>
+              </td>
+            </tr>
+          </table>
+      </div>
+
+      <div class="no-data" style="margin-top: 55px;" *ngIf="!databaseList || (databaseList && !databaseList.length)">
+        <div *ngIf="title!=='NO TITLE' &&  databaseList.length === 0"  class="total-count title">{{title}}</div>
+        <p>No Data Available</p></div>
+    </div>
+</div>

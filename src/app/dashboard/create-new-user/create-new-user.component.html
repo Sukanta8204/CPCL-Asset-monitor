@@ -1,0 +1,26 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="user-form">
+  <h2>Create New User</h2>
+
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input id="username" type="text" formControlName="username" />
+  </div>
+
+  <div class="form-group">
+    <label for="role">Role</label>
+    <select id="role" formControlName="role">
+      <option value="SP">Supervisor</option>
+      <option value="AD">Admin</option>
+      <option value="FT">Field technician</option>
+      <option value="LT">Lab technician</option>
+      <option value="ET">Engineering technician</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" />
+  </div>
+
+  <button type="submit">Create User</button>
+</form>

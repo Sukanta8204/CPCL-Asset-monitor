@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Create Audit for {{data.name}}</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="align">
+  <mat-dialog-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Assign To</mat-label>
+      <mat-select formControlName="assignedTo" class="select-container">
+        <mat-option *ngFor="let user of users" [value]="user.username">
+          {{ user.username }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="center" class="'btn-container" >
+    <button mat-button type="button" class='button-styling cancel-btn'(click)="onCancel()">Cancel</button>
+    <button mat-raised-button color="primary"  class='button-styling submit-btn' type="submit" [disabled]="form.invalid">Assign</button>
+  </mat-dialog-actions>
+</form>

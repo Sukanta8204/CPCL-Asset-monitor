@@ -1,0 +1,295 @@
+
+
+.main-container {
+  /* Header Content */
+  .header-content {
+    padding: 30px 30px 10px 30px;
+  }
+
+  /* Query Container */
+  .query-container {
+    background: white;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    border-radius: 8px;
+  }
+
+  /* Input Content */
+  .query-container .input-content {
+    padding-top: 14px;
+    width: 96%;
+    background: #eeeeeea1;
+    height: 45px;
+    margin: 25px;
+    padding-left: 25px;
+    border-radius: 6px;
+    outline: none;
+    border: 0px;
+    font-size: 16px;
+  }
+
+  /* Filter Content */
+  .filter-content {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  }
+
+  /* Mat-Select */
+  .filter-content .mat-select {
+    background: #eeeeeea1;
+    height: 30px;
+    line-height: 30px;
+    width: 300px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 6px;
+    padding-left: 26px;
+    padding-right: 26px;
+    font-size: 14px;
+  }
+
+  .title{
+    font-size: larger;
+    margin: 0px!important;
+    font-weight: 600;
+  }
+
+  /* Button Content */
+  .filter-content .btn-content {
+    height: 30px;
+    width: 140px;
+    padding-left: 26px;
+    background: #f28100;
+    color: white;
+    font-size: 14px;
+    border-radius: 6px !important;
+  }
+
+  /* Mat-Button Toggle Label Content */
+  .filter-content .btn-content .mat-button-toggle-label-content {
+    line-height: 32px !important;
+  }
+
+  /* Span */
+  .filter-content span {
+    position: relative;
+    margin-left: 36px;
+  }
+
+  /* Copy Content */
+  .filter-content span .copy-content {
+    position: absolute;
+    top: -3px;
+    left: -20px;
+    color: #f28100;
+    cursor: pointer;
+  }
+
+  /* Text Copied */
+  .filter-content span .text-copied {
+    position: absolute;
+    right: -28px;
+    top: -34px;
+    width: 117px;
+    font-size: 14px;
+    color: green;
+    font-weight: 700;
+    background: #0080001c;
+    border-radius: 6px;
+    text-align: center;
+    padding: 3px 0px;
+  }
+
+  /* Side Navigation */
+  .side-nav-cls {
+    padding: 0px 24px !important;
+    background: white;
+    border-radius: 0px 8px 8px 0px;
+  }
+
+  /* Table Content */
+  .table-content {border-radius: 10px;
+
+    overflow: hidden;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .table-content .table-wrapper {
+    overflow-x: auto;
+    box-shadow: 0px 2px 8px 0px #0000000A, 0px 6px 16px 4px #0000000A;
+    border-radius: 8px;
+  }
+
+  /* Table */
+  .table-content .table-wrapper table {
+    border-collapse: collapse;
+    position: relative;
+  }
+
+  /* Table Row */
+  .table-content .table-wrapper tr {
+    font-weight: 400;
+    font-size: 20px;
+    border-bottom: 1pt solid #EBEBEB;
+  }
+
+  /* Table Header */
+  .table-content .table-wrapper th {
+    color: #2e2e2e;
+    font-weight: 500;
+    font-size: 24px;
+    padding: 24px 16px 16px 24px;
+    text-align: left;
+    border-bottom: 1pt solid #EBEBEB;
+    line-height: 21.79px;
+  }
+
+  /* Table Grid */
+  .table-content .table-wrapper .table-grid , .table-content .no-data{
+    border-radius: 8px;
+    background: white;
+    min-width: 100%;
+  }
+
+  .table-content .no-data p{
+    font-size: larger;
+    text-align: center;
+    padding-bottom: 24px;
+  }
+
+  /* Total Count */
+  .table-content .table-wrapper .table-grid .total-count {
+    padding: 24px 0px 16px 0px;
+    font-size: 28px;
+    line-height: 24.52px;
+    text-align: left;
+    position: absolute;
+    top: 0px;
+    border-bottom: 1pt solid #EBEBEB;
+    width: 100%;
+    font-weight: 600;
+    font-family: 'Noto Sans', sans-serif !important;
+    color: #15191E;
+  }
+  .heading{
+    font-size: 25px;
+    color: #15191E;
+  }
+  .total-count{
+    font-size: 30px;
+    padding:0 32px;
+    margin-left: 24px;
+  }
+
+  .table-content .table-wrapper .table-grid .total-count span {
+    background: #FFF3E0;
+    padding: 2px 8px;
+    border-radius: 16px;
+    color: #F57C00;
+    font-size: 30px;
+    font-weight: 400;
+    margin-left: 8px;
+    font-family: 'Noto Sans', sans-serif !important;
+  }
+
+  /* Edit Button */
+  .table-content .table-wrapper .table-grid .edit-btn {
+    cursor: pointer;
+  }
+
+  /* Edit Button Image */
+  .table-content .table-wrapper .table-grid .edit-btn img {
+    width: 14px;
+  }
+
+  /* Table Head */
+  .table-content .table-wrapper .table-head {
+    white-space: nowrap;
+    font-weight: bold;
+    border: 0;
+    padding-right: 16px;
+  }
+
+  /* Table Body */
+  .table-content .table-wrapper .table-body {
+    width: 100%;
+    max-height: calc(100vh - 205px);
+    overflow: auto;
+  }
+
+  /* Action Button */
+  .table-content .table-wrapper .action-btn {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Sorting Icon */
+  .table-content .table-wrapper .sorting-icon {
+    position: relative;
+    margin-left: 3px;
+    cursor: pointer;
+    line-height: normal;
+    display: inline-flex;
+  }
+
+  .table-content .table-wrapper .sorting-icon .fa-sort-desc {
+    position: absolute;
+    left: 0;
+  }
+
+  /* Data Count */
+  .table-content .data-count {
+    padding-top: 18px;
+    padding-right: 12px;
+    position: relative;
+    float: right;
+  }
+
+  /* Pagination */
+  .table-content .ngx-pagination .current {
+    background: #F57C00 !important;
+  }
+
+  .table-content .ngx-pagination {
+    text-align: center;
+  }
+
+  /* Table Body Data */
+  .table-body-data {
+    white-space: nowrap;
+    padding: 16px 16px 16px 24px;
+    text-align: left;
+    cursor: pointer;
+  }
+}
+
+
+.bad-health-status{
+  color: red;
+}
+
+.tbr-status{
+  color: #f28100;
+}
+
+.action-btn{
+  background-color: transparent;
+}
+
+.table-content{
+  margin-bottom: 35px;
+}
+
+.table-content .table-wrapper .table-grid .edit-btn {
+  cursor: pointer;
+  background: none!important;
+  border: none !important;
+}

@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+/* Global scrollbar style (for WebKit-based browsers) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*{
+  font-family: 'Roboto' !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dddddd;
+  border-radius: 4px;
+}
+/*
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffffff;
+} */
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.custom-dialog-container {
+  --mdc-dialog-container-color: #ffffff;
+
+}
+
+.custom-dialog-container-2{
+  --mdc-dialog-container-color: transparent;
+  width:fit-content;
+  height: fit-content;
+}
+
+.mat-mdc-dialog-surface {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  min-width: 700px !important;
+  height: 100%;
+  position: relative;
+  overflow-y: auto !important;
+  outline: 0;
+  transform: scale(0.8);
+  transition: transform var(--mat-dialog-transition-duration, 0ms) cubic-bezier(0, 0, 0.2, 1);
+  /* max-height: inherit; */
+  /* min-height: inherit; */
+  /* min-width: inherit; */
+  /* max-width: inherit; */
+  box-shadow: var(--mat-dialog-container-elevation-shadow, none);
+  border-radius: var(--mdc-dialog-container-shape, var(--mat-sys-corner-extra-large, 4px));
+  background-color: var(--mdc-dialog-container-color, var(--mat-sys-surface, white));
+  color: black;
+  overflow-x: hidden !important;
+  padding: 30px;
+}
+
+
+::ng-deep .mdc-tab__text-label {
+  color: black !important;
+  --mat-sys-on-surface: black !important;
+  --mat-tab-header-inactive-label-text-color: black !important;
+}
+
+.mdc-tab__text-label {
+  color: black !important;
+  font-size: 20px;
+}

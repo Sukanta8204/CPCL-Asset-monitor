@@ -1,0 +1,127 @@
+<!-- dynamic-form.component.html -->
+<form [formGroup]="dynamicForm" class="dynamic-form">
+  <div class="form-container">
+    <!-- Left Column -->
+    <div class="form-column left-column" *ngIf="leftFields.length > 0">
+      <div class="form-field" *ngFor="let field of leftFields">
+        <ng-container *ngIf="field.type !== 'button'">
+          <label [for]="field.name" class="field-label">
+            {{ field.label }}
+            <span class="required-mark" *ngIf="field.isRequired">*</span>
+          </label>
+
+          <div class="input-container">
+            <ng-container *ngIf="!(field.type == 'textarea' || field.type == 'select')">
+              <input
+                [type]="getFieldType(field.type)"
+                [id]="field.name"
+                *ngIf="field.type !== 'textarea' || field.type !== 'select'"
+                [formControlName]="field.name"
+                [placeholder]="field.placeholder"
+                class="form-input"
+                [ngClass]="{'invalid': isFieldInvalid(field.name)}"
+              />
+              <span class="unit" *ngIf="field.unit">{{ field.unit }}</span>
+            </ng-container>
+
+            <ng-container *ngIf="field.type ==='textarea' || field.type ==='select'">
+              <textarea
+              *ngIf="field.type === 'textarea'"
+                [id]="field.name"
+                [formControlName]="field.name"
+                [placeholder]="field.placeholder"
+                class="form-textarea"
+                [ngClass]="{'invalid': isFieldInvalid(field.name)}"
+                rows="4"
+              ></textarea>
+              <ng-container *ngIf="field.type === 'select' || field.type === 'dropdown'">
+                <mat-select
+                  [id]="field.name"
+                  [formControlName]="field.name"
+                  class="form-input"
+                  [placeholder]="field.placeholder"
+                  [ngClass]="{'invalid': isFieldInvalid(field.name)}"
+                >
+                  <mat-option *ngFor="let option of field.options" [value]="option.value">{{option.label}}</mat-option>
+                </mat-select>
+              </ng-container>
+                <span class="error-message" *ngIf="dynamicForm.get('isResolved')?.invalid && dynamicForm.get('isResolved')?.touched">
+                  This field is required
+                </span>
+            </ng-container>
+          </div>
+
+          <div class="error-message" *ngIf="isFieldInvalid(field.name)" style="font-size: 14px;">
+            This field is required
+          </div>
+
+          <div class="threshold-info" *ngIf="field.thresholdMin !== undefined || field.thresholdMax !== undefined">
+            <span *ngIf="field.thresholdMin !== undefined" style="font-size: 14px;">Min: {{ field.thresholdMin }}</span>
+            <span *ngIf="field.thresholdMin !== undefined && field.thresholdMax !== undefined" style="font-size: 14px;"> | </span>
+            <span *ngIf="field.thresholdMax !== undefined" style="font-size: 14px;">Max: {{ field.thresholdMax }}</span>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- Right Column
+    <div class="form-column right-column" *ngIf="rightFields.length > 0">
+      <div class="form-field" *ngFor="let field of rightFields">
+        <ng-container *ngIf="field.type !== 'button'">
+          <label [for]="field.name" class="field-label">
+            {{ field.label }}
+            <span class="required-mark" *ngIf="field.isRequired">*</span>
+          </label>
+
+          <div class="input-container">
+            <ng-container *ngIf="field.type !== 'textarea'; else textareaTemplateRight">
+              <input
+                [type]="getFieldType(field.type)"
+                [id]="field.name"
+                [formControlName]="field.name"
+                [placeholder]="field.placeholder"
+                class="form-input"
+                [ngClass]="{'invalid': isFieldInvalid(field.name)}"
+              />
+              <span class="unit" *ngIf="field.unit">{{ field.unit }}</span>
+            </ng-container>
+
+            <ng-template #textareaTemplateRight>
+              <textarea
+                [id]="field.name"
+                [formControlName]="field.name"
+                [placeholder]="field.placeholder"
+                class="form-textarea"
+                [ngClass]="{'invalid': isFieldInvalid(field.name)}"
+                rows="4"
+              ></textarea>
+            </ng-template>
+          </div>
+
+          <div class="error-message" *ngIf="isFieldInvalid(field.name)">
+            This field is required
+          </div>
+
+          <div class="threshold-info" *ngIf="field.thresholdMin !== undefined || field.thresholdMax !== undefined">
+            <span *ngIf="field.thresholdMin !== undefined">Min: {{ field.thresholdMin }}</span>
+            <span *ngIf="field.thresholdMin !== undefined && field.thresholdMax !== undefined"> | </span>
+            <span *ngIf="field.thresholdMax !== undefined">Max: {{ field.thresholdMax }}</span>
+          </div>
+        </ng-container>
+      </div>
+    </div> -->
+  </div>
+
+  <!-- Bottom Buttons -->
+  <div class="form-actions" *ngIf="bottomFields.length > 0">
+    <button
+      *ngFor="let button of bottomFields"
+      type="button"
+      class="form-button"
+      [ngStyle]="button.style"
+      (click)="onButtonClick(button.name)"
+    >
+      {{ button.value }}
+    </button>
+  </div>
+</form>

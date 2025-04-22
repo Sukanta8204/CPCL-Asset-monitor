@@ -1,0 +1,40 @@
+<div>
+  <div style="text-align: end; cursor: pointer;" (click)="onClose()">
+    <h3 style="text-align: end; cursor: pointer;" (click)="onClose()">X</h3>
+  </div>
+  <h1>{{this.data.machine_id}} - {{this.data.machine_type}}</h1>
+  <app-dynamic-table
+    [databaseList]="[this.fieldAnalysis]"
+    title="Field Analysis Data"
+    [removeKeys]="actableConfig.removeKeys"
+    [dateKeys]="actableConfig.dateKeys"
+    [orderKeys]="actableConfig.orderKeys"
+    [actionKeys]="actableConfig.actionKeys"
+    [renameHeaderKeys]="actableConfig.renameHeaderKeys"
+    [actionButtonType]="actableConfig.actionButtonType"
+  ></app-dynamic-table>
+
+
+    <app-dynamic-table
+    [databaseList]="this.labAnalysis !== 'NA'? [this.labAnalysis] : [{'status': 'Not Applicable'}]"
+    title="Lab Analysis Data"
+    [removeKeys]="actableConfig.removeKeys"
+    [dateKeys]="actableConfig.dateKeys"
+    [orderKeys]="actableConfig.orderKeys"
+    [actionKeys]="actableConfig.actionKeys"
+    [renameHeaderKeys]="actableConfig.renameHeaderKeys"
+    [actionButtonType]="actableConfig.actionButtonType"
+  ></app-dynamic-table>
+
+  <app-dynamic-table
+    [databaseList]="this.engineerAnalysis !== 'NA'? [this.engineerAnalysis] : [{'status': 'Not Applicable'}]"
+    title="Engineer Analysis/ Fixes"
+    [removeKeys]="actableConfig.removeKeys"
+    [dateKeys]="actableConfig.dateKeys"
+    [orderKeys]="actableConfig.orderKeys"
+    [actionKeys]="actableConfig.actionKeys"
+    [renameHeaderKeys]="actableConfig.renameHeaderKeys"
+    [actionButtonType]="actableConfig.actionButtonType"
+  ></app-dynamic-table>
+
+</div>

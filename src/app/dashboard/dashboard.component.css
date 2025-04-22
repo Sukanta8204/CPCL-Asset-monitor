@@ -1,0 +1,168 @@
+div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 75px;
+  font-size: larger;
+}
+
+.button-styling {
+  display: inline-block;
+  padding: 17px 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 8px;
+  cursor: default;
+  user-select: none;
+  outline: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-panel{
+  margin: 0px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-btn {
+  background-color: #000000; /* Light green */
+  color: rgb(243, 243, 243);
+}
+
+.machine-btn {
+  background-color: #000000; /* Light green */
+  color: rgb(255, 255, 255);
+}
+
+
+.submit-btn:hover {
+  background-color: #c3e6cb;
+  transform: translateY(-2px);
+}
+
+
+
+.username {
+  font-weight: 500;
+  color: #333;
+  cursor: default;
+  user-select: none;
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:22px;
+}
+
+.logout-btn {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.tab-content {
+  padding: 16px;
+}
+
+.navbar-tabs .mat-tab-label {
+  color: black !important;
+}
+
+.navbar-tabs .mat-tab-label.mat-tab-label-active {
+  color: black !important;
+}
+.img-style{
+width: 50px;
+  height: 50px;
+}
+.navbar-tabs .mat-tab-header {
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+}
+.btns{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.bell-icon{
+  font-size: larger;
+  height: 45px;
+  width: 45px;
+  margin-right: 15px;
+  gap: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  padding: 1rem;
+  background-color: #dae2f3;
+  min-height: calc(100vh - 75px);
+  padding-top: 45px;
+  justify-content: start;
+  padding: 44px;
+}
+
+::ng-deep .mat-mdc-tab-label  {
+  color: black !important;
+  --mat-sys-on-surface: black !important;
+  --mat-tab-header-inactive-label-text-color: black !important;
+  font-size: 24px !important;
+}
+
+
+::ng-deep .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+  color: #174069;
+  font-size: 24px !important;
+}
+
+::ng-deep .mat-mdc-tab.mdc-tab--inactive .mdc-tab__text-label {
+  color: #174069;
+  font-size: 24px !important;
+}
+
+::ng-deep .mat-mdc-tab-label {
+  color: black !important;
+  font-size: 24px !important;
+}
+::ng-deep .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+  color: #174069;
+  font-size: 24px!important;
+
+}
+
+::ng-deep .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label :hover{
+  color: #174069;
+  font-size: 24px!important;
+  transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+
+
+.mat-mdc-tab .mdc-tab__text-label{
+  font-size: 24px;
+}

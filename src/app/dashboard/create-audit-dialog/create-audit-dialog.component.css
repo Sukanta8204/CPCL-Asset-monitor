@@ -1,0 +1,121 @@
+/* styles.scss or component-specific SCSS */
+
+/* Dialog Container Styling */
+::ng-deep .custom-dialog-container .mat-dialog-container {
+  padding: 24px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dialog Title Styling */
+::ng-deep .custom-dialog-container .mat-dialog-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Form Field Styling */
+::ng-deep .custom-dialog-container .mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Label Styling */
+::ng-deep .custom-dialog-container .mat-form-field-label {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Input Field Styling */
+::ng-deep .custom-dialog-container .mat-input-element {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Select Dropdown Styling */
+::ng-deep .custom-dialog-container .mat-select-value {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Dialog Actions Styling */
+::ng-deep .custom-dialog-container .mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 16px;
+}
+
+/* Button Styling */
+::ng-deep .custom-dialog-container .mat-button,
+::ng-deep .custom-dialog-container .mat-raised-button {
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+/* Disabled Button Styling */
+::ng-deep .custom-dialog-container .mat-raised-button[disabled] {
+  background-color: #ccc;
+  color: #fff;
+}
+
+/* Base button styling */
+.button-styling {
+  display: inline-block;
+  padding: 10px 24px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Cancel button specific styling */
+.cancel-btn {
+  background-color: #f8d7da; /* Light red */
+  color: #721c24;
+  margin-right: 14px;
+}
+
+.cancel-btn:hover {
+  background-color: #f5c6cb;
+  transform: translateY(-2px);
+}
+
+/* Submit button specific styling */
+.submit-btn {
+  background-color: #d4edda; /* Light green */
+  color: #155724;
+}
+
+.submit-btn:hover {
+  background-color: #c3e6cb;
+  transform: translateY(-2px);
+}
+
+.btn-container{
+  display: flex;
+  gap: 15px;
+}
+
+.mat-mdc-text-field-wrapper {
+  width: 500px;
+  z-index: 0;
+}
+.align{
+  text-align: center;
+}
+
+h2{
+  color: black !important;
+  text-align: center;
+}
