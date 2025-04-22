@@ -94,7 +94,7 @@
 
   <ng-container *ngIf="user.role !== 'SP' && user.role !== 'AD'" >
     <p>{{this.data?.duelist?.length === 0? 'Due List': ''}}</p>
-    <app-dynamic-table  [databaseList]="this.data?.dueList" title="Dues List" [removeKeys]="actableConifg.removeKeys"
+    <app-dynamic-table  [databaseList]="this.data?.dueList" title="Pending List" [removeKeys]="actableConifg.removeKeys"
       [dateKeys]="actableConifg.dateKeys" [orderKeys]="actableConifg.orderKeys" [actionKeys]="actableConifg.actionKeys"
       [renameHeaderKeys]="actableConifg.renameHeaderKeys" [actionButtonType]="actableConifg.actionButtonType"
       (openModal)="openDynamicForm($event)"></app-dynamic-table>
