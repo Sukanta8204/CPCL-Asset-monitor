@@ -30,7 +30,6 @@ export class ApiService {
   }
 
   postMachineAnalysisData(data: any){
-    console.log(data)
     return this.http.post<any>(`${baseUrl}/api/setAnalysis`, data)
   }
 

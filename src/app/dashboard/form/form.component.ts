@@ -27,7 +27,6 @@ export class FormComponent {
   }
 
   handleFormAction(event: any): void {
-    console.log(this.data)
     let formData = {
       tested_by: JSON.parse(localStorage.getItem('user_data')|| '').username,
       analysis_data: {...event.data},
@@ -56,7 +55,7 @@ export class FormComponent {
         alert('Uploaded Successfully')
       },
       error: (error: any) => {
-        alert(error)
+        alert(error.message)
         console.error('Error fetching machine data:', error);
       }
     });

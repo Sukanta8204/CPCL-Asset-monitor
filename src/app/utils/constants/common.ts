@@ -229,7 +229,7 @@ export const DYNAMIC_FORM = {
         name: "remarks",
         label: "Remarks",
         type: CONSTANTS.TYPES.SELECT,
-        options: [{value :'Normal', label: 'Normal'}, {value:'To be resampled after 3 months to observe rate of rise', label: 'To be resampled after 3 months to observe rate of rise'}],
+        options: [{value :'Normal', label: 'Normal'}, {value:'Critical', label: 'Critical'},{value:'To be resampled after 3 months to observe rate of rise', label: 'To be resampled after 3 months to observe rate of rise'}],
         value: "",
         valueType: CONSTANTS.TYPES.STRING,
         placeholder: "Enter remarks or observations...",
@@ -301,8 +301,8 @@ export const DYNAMIC_FORM = {
           name: "remarks",
           label: "Remarks",
           type: CONSTANTS.TYPES.SELECT,
+        options: [{value :'Normal', label: 'Normal'}, {value:'Critical', label: 'Critical'},{value:'To be resampled after 3 months to observe rate of rise', label: 'To be resampled after 3 months to observe rate of rise'}],
           value: "",
-          options: [{value :'Normal', label: 'Normal'}, {value:'To be resampled after 3 months to observe rate of rise', label: 'To be resampled after 3 months to observe rate of rise'}],
           valueType: CONSTANTS.TYPES.STRING,
           placeholder: "Enter remarks or observations...",
           isRequired: true

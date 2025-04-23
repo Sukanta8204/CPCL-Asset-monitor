@@ -54,7 +54,6 @@ isShowLoader: any;
     )
     .subscribe({
       next: (data: any[]) => {
-        console.log('Fetched notifications:', data);
         this.notifications = data;
         this.notificationCount.updateCount(this.notifications.length, this.notifications)
       },
@@ -74,13 +73,11 @@ isShowLoader: any;
   }
 
   allUsers(){
-    console.log('cal')
     this.apiService.getAllUsersData().subscribe({
       next: (res) => this.usersList = res,
       error: (e) => console.error(e)
     })
 
-    console.log(this.usersList)
   }
   apiData() {
     this.isShowLoader = true
@@ -92,7 +89,7 @@ isShowLoader: any;
           dueList: res.machineWithDues,
           auditList: res.machineOnAudit
         };
-        console.log(this.data)
+
         this.isShowLoader = false
       },
       error: (error: any) => {

@@ -53,7 +53,7 @@ export class CreateAuditDialogComponent {
         this.users = res
       },
       error: (error: any) => {
-        alert(error)
+        alert(error.message)
         console.error('Error fetching machine data:', error);
       }
     });
@@ -68,7 +68,7 @@ export class CreateAuditDialogComponent {
           else this.dataUpdateService.triggerUpdate();
         },
         error: (error: any) => {
-          alert(error)
+          alert(error.message)
           console.error('Error fetching machine data:', error);
         }
       })

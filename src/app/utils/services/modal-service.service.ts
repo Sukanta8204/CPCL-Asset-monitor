@@ -33,7 +33,6 @@ export class ModalService {
   }
 
   dynamicForm(data: AuditDialogData) {
-    console.log(data)
     const dialogRef1 = this.dialog.open(FormComponent, {
       maxWidth: '75vw',
       maxHeight: '75vh',

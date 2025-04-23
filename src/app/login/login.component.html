@@ -36,6 +36,8 @@
         Password is required
       </div>
 
+      <div *ngIf="isError"><p style="color: red;">Invalid Credentials</p></div>
+
       <button class="button-submit" type="submit">Sign In</button>
     </form>
   </div>

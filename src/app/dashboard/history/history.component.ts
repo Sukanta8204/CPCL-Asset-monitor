@@ -21,11 +21,9 @@ export class HistoryComponent {
 
     ngOnInit(){
     this.actableConfig  = DYNAMIC_TABLE.DASHBOARD3
-    console.log(this.actableConfig)
     this.fieldAnalysis = this.data.field_analysis || 'NA'
     this.labAnalysis = this.data.lab_analysis || 'NA'
     this.engineerAnalysis = this.data.engg_analysis || 'NA'
-    console.log(this.fieldAnalysis,this.labAnalysis,this.engineerAnalysis)
   }
 
   onClose(){

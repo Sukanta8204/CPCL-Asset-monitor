@@ -44,7 +44,6 @@ export class DynamicFormComponent implements OnInit {
     // Add form controls for left fields
     this.leftFields.forEach(field => {
       if (field.type !== 'button') {
-        console.log(field.type)
         this.dynamicForm.addControl(
           field.name,
           this.fb.control(
@@ -62,7 +61,6 @@ export class DynamicFormComponent implements OnInit {
       return;
     }
 
-    console.log(this.dynamicForm,this.leftFields)
 
     let isHealthy = true
 
@@ -74,7 +72,6 @@ export class DynamicFormComponent implements OnInit {
         const aboveMax = item.thresholdMax !== null && value > item.thresholdMax;
 
         if (belowMin || aboveMax) {
-          console.log(item);
           isHealthy = false;
         }
       }

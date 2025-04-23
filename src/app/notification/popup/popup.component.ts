@@ -30,7 +30,7 @@ export class PopupComponent {
       this.notifications = this.notifications.filter(i => i.id !== item.id)
       item.is_read = true
       this.apiService.readNotification(item).subscribe({
-        next: (res) => console.log('read successfully'),
+        next: (res) =>{},
         error: (e) => console.error(e)
       })
       this.notificationCount.updateCount(this.notifications.length,this.notifications)
@@ -44,7 +44,7 @@ export class PopupComponent {
       this.notificationCount.updateCount(0,[])
       this.dialogRef.close()
       this.apiService.readAllNotifications().subscribe({
-        next: (res) => console.log('read successfully'),
+        next: (res) => {},
         error: (e) => console.error(e)})
     }
 }

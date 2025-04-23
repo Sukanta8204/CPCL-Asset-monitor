@@ -42,7 +42,6 @@ export class DynamicTableComponent {
 
     ngOnInit(){
       this.userRole = JSON.parse(localStorage.getItem('user_data') || '').role
-      console.log(this.userRole)
     }
 
     ngOnChanges(){
@@ -79,7 +78,6 @@ export class DynamicTableComponent {
   }
 
   navigate(item:any, action:any){
-    console.log(item)
     if(action.isModal) this.openModal.emit({ ...item, action });
     else if(action.isNavigate) this.router.navigateByUrl(action.navigateUrl);
     else return;

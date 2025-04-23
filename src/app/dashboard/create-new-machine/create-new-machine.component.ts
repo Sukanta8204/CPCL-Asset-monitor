@@ -56,7 +56,7 @@ export class CreateNewMachineComponent {
         this.dialogRef.close()
       },
       error: (error: any) => {
-        alert(error)
+        alert(error.message)
         console.error('Error fetching machine data:', error);
       }
     })

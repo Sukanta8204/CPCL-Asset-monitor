@@ -11,6 +11,7 @@ import { LoginService } from './login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  isError = false
 
 
   loginForm: FormGroup;
@@ -30,11 +31,12 @@ export class LoginComponent {
 
       this.loginService.loginUser({ username, password }).subscribe({
         next: (res: any) => {
-          console.log(res)
+          this.isError = false
           localStorage.setItem('user_data', JSON.stringify(res))
           this.router.navigate([''])
         },
         error: err => {
+          this.isError = true
           console.error('Login failed', err);
         }
       });
